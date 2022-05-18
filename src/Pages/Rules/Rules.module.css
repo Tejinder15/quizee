@@ -19,6 +19,11 @@
   background-color: var(--play-btn);
 }
 
+.goback_btn,
+.startplay_btn {
+  text-decoration: none;
+}
+
 @media only screen and (min-width: 638px) {
   ol {
     margin-bottom: 2.4rem;

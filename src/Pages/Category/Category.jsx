@@ -9,12 +9,11 @@ const Category = () => {
   return (
     <div>
       <Header />
-      <section className={styles.category_section}>
-        <div className={styles.category_container}></div>
+      <div className={styles.category_container}>
         <CategoryItem title="Maths" image={maths} />
         <CategoryItem title="English" image={english} />
         <CategoryItem title="Science" image={science} />
-      </section>
+      </div>
     </div>
   );
 };

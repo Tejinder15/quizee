@@ -1,6 +1,7 @@
 import Header from "../../Components/Header/Header";
 import hero from "../../Images/hero.png";
 import styles from "./Home.module.css";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -11,7 +12,9 @@ const Home = () => {
           <h2 className={styles.hero_text}>
             Get Smarter By Playing Knowledgeable and Exciting Quiz.
           </h2>
-          <button className={styles.play_btn}>Play!</button>
+          <Link to="/category" className={styles.play_btn}>
+            Play!
+          </Link>
         </div>
         <div className={styles.hero_img_container}>
           <img src={hero} alt="hero" className={styles.hero_img} />

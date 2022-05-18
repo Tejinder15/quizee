@@ -16,6 +16,11 @@
   color: var(--category-text);
 }
 
+.category_link {
+  display: block;
+  text-decoration: none;
+}
+
 @media only screen and (max-width: 1024px) {
   .category_item {
     margin-top: 12px;

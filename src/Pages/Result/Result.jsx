@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Header from "../../Components/Header/Header";
 import styles from "./Result.module.css";
 const Result = () => {
@@ -9,29 +10,31 @@ const Result = () => {
         <div className={styles.result_check}>
           <ol>
             <li>
-              <p>Your Answer: Answer</p>
-              <p>Correct Answer: Answer</p>
+              <p>Your Answer : Answer</p>
+              <p>Correct Answer : Answer</p>
             </li>
             <li>
-              <p>Your Answer: Answer</p>
-              <p>Correct Answer: Answer</p>
+              <p>Your Answer : Answer</p>
+              <p>Correct Answer : Answer</p>
             </li>
             <li>
-              <p>Your Answer: Answer</p>
-              <p>Correct Answer: Answer</p>
+              <p>Your Answer : Answer</p>
+              <p>Correct Answer : Answer</p>
             </li>
             <li>
-              <p>Your Answer: Answer</p>
-              <p>Correct Answer: Answer</p>
+              <p>Your Answer : Answer</p>
+              <p>Correct Answer : Answer</p>
             </li>
             <li>
-              <p>Your Answer: Answer</p>
-              <p>Correct Answer: Answer</p>
+              <p>Your Answer : Answer</p>
+              <p>Correct Answer : Answer</p>
             </li>
           </ol>
         </div>
         <div className={styles.result_footer}>
-          <button className={`btn btn-error ${styles.exit_btn}`}>Exit</button>
+          <Link to="/category" className={`btn btn-error ${styles.exit_btn}`}>
+            Exit
+          </Link>
         </div>
       </div>
     </div>

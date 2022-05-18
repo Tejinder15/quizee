@@ -4,11 +4,25 @@
   margin: 0 auto;
 }
 
-.login_btn {
-  background-color: var(--play-btn);
-  padding: 0.5rem 0.8rem;
+.nav_links {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
 }
 
-.nav_container {
-  border: 1px solid black;
+.nav_links > * {
+  margin-right: 16px;
+}
+
+.nav_item {
+  color: black;
+}
+
+.login_btn {
+  border: none;
+  padding: 0.5rem 1rem;
+  background-color: var(--play-btn);
+  cursor: pointer;
+  color: var(--category-text);
+  text-decoration: none;
 }

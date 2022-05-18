@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Header from "../../Components/Header/Header";
 import styles from "./Rules.module.css";
 
@@ -23,12 +24,18 @@ const Rules = () => {
           </li>
         </ol>
         <div className={styles.rules_footer}>
-          <button className={`btn btn-default ${styles.goback_btn}`}>
+          <Link
+            to="/category"
+            className={`btn btn-default ${styles.goback_btn}`}
+          >
             Go Back
-          </button>
-          <button className={`btn btn-default ${styles.startplay_btn}`}>
+          </Link>
+          <Link
+            to="/quiz"
+            className={`btn btn-default ${styles.startplay_btn}`}
+          >
             Start Playing
-          </button>
+          </Link>
         </div>
       </div>
     </div>
