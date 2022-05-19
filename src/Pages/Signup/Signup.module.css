@@ -1,35 +1,35 @@
-.name_container {
+.view_pass {
+  border: 1px solid black;
+  border-radius: 2px;
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 0.8rem;
+  align-items: center;
+  max-width: 286px;
 }
 
-.fname,
-.lname {
-  min-width: 0 !important;
-  max-width: 140px;
+.confirm_pass {
+  border: none;
+  outline: none;
+  border-right: 1px solid black;
+  width: 80%;
+  min-width: 100px !important;
 }
 
-/* Choice Check for Signup */
+.visi_btn {
+  border: none;
+  background-color: transparent;
+}
+
 .signup_group {
   display: flex;
-  justify-content: center;
   align-items: center;
-  margin: 0 0 1rem 0;
+  justify-content: center;
 }
 
 .signup_link {
-  color: black;
-  margin-bottom: 2px;
+  text-decoration: none;
+  color: #57cc99;
 }
 
-.signup-link:hover {
-  text-decoration: underline;
-}
-
-/* Media Query */
-@media only screen and (max-width: 425px) {
-  .auth-container {
-    padding: 1.2rem 0.6rem;
-  }
+.error {
+  color: #e71d36;
 }
