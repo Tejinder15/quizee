@@ -5,7 +5,7 @@ import { useAuth } from "../../Context/AuthContext/auth-context";
 import { auth } from "../../firebase-config";
 const Login = () => {
   const [userData, setUserData] = useState({ email: "", password: "" });
-  const { authState, authDispatch } = useAuth();
+  const { authDispatch } = useAuth();
   const navigate = useNavigate();
 
   const loginHandler = async (event) => {
@@ -27,13 +27,12 @@ const Login = () => {
         localStorage.setItem("user", response.user.email);
         localStorage.setItem("token", response.user.accessToken);
         navigate("/");
-        setTimeout(() => alert("Successfully Logged In"), 1600);
+        setTimeout(() => alert("Successfully Logged In"), 1200);
       } else {
-        console.log("user does not exist");
+        console.log("User Does Not exist");
       }
-      console.log(response);
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
 
