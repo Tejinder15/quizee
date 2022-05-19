@@ -1,13 +1,15 @@
 import { signOut } from "firebase/auth";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../Context/AuthContext/auth-context";
 import { auth } from "../../firebase-config";
 import styles from "./Header.module.css";
 
 const Header = () => {
   const navigate = useNavigate();
-  const { authState, authDispatch } = useAuth();
-  const { token } = authState;
+  const {
+    authState: { token },
+    authDispatch,
+  } = useAuth();
   const loginOutHandler = async () => {
     if (token) {
       await signOut(auth);
