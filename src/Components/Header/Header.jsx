@@ -1,7 +1,25 @@
-import { Link } from "react-router-dom";
+import { signOut } from "firebase/auth";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../../Context/AuthContext/auth-context";
+import { auth } from "../../firebase-config";
 import styles from "./Header.module.css";
 
 const Header = () => {
+  const navigate = useNavigate();
+  const { authState, authDispatch } = useAuth();
+  const { token } = authState;
+  const loginOutHandler = async () => {
+    if (token) {
+      await signOut(auth);
+      localStorage.removeItem("token");
+      localStorage.removeItem("user");
+      authDispatch({ type: "LOGOUT" });
+      navigate("/");
+    } else {
+      navigate("/login");
+    }
+  };
+
   return (
     <header className={styles.nav_container}>
       <nav className={`navbar ${styles.container}`}>
@@ -10,9 +28,13 @@ const Header = () => {
         </div>
         <ul className={styles.nav_links}>
           <li>
-            <Link to="/login" className={styles.login_btn}>
-              Login
-            </Link>
+            <button
+              to="/login"
+              className={styles.login_btn}
+              onClick={loginOutHandler}
+            >
+              {token ? "Logout" : "Login"}
+            </button>
           </li>
         </ul>
       </nav>
