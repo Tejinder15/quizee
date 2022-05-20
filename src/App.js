@@ -7,6 +7,7 @@ import Quiz from './Pages/Quiz/Quiz';
 import Login from './Pages/Login/Login';
 import Signup from './Pages/Signup/Signup';
 import { Route, Routes } from 'react-router-dom';
+import { PrivateRoute } from './Routes/private-route';
 
 function App() {
   return (
@@ -16,9 +17,11 @@ function App() {
         <Route path='/login' element={<Login/>}/>
         <Route path='/signup' element={<Signup/>}/>
         <Route path='/category' element={<Category/>}/>
-        <Route path='/rules' element={<Rules/>}/>
-        <Route path='/quiz' element={<Quiz/>}/>
-        <Route path='/result' element={<Result/>}/>
+        <Route element={<PrivateRoute/>}>
+          <Route path='/rules' element={<Rules/>}/>
+          <Route path='/quiz' element={<Quiz/>}/>
+          <Route path='/result' element={<Result/>}/>
+        </Route>
       </Routes>
     </div>
   );
