@@ -14,3 +14,11 @@
   padding: 0.6rem 1.6rem;
   text-decoration: none;
 }
+
+.crr_ans {
+  background-color: var(--play-btn);
+}
+
+.wrong_ans {
+  background-color: #fe6d73;
+}
