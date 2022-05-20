@@ -1,8 +1,9 @@
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Header from "../../Components/Header/Header";
 import styles from "./Rules.module.css";
 
 const Rules = () => {
+  const { category } = useParams();
   return (
     <div>
       <Header />
@@ -31,7 +32,7 @@ const Rules = () => {
             Go Back
           </Link>
           <Link
-            to="/quiz"
+            to={`/quiz/${category}`}
             className={`btn btn-default ${styles.startplay_btn}`}
           >
             Start Playing

@@ -3,7 +3,7 @@ import styles from "./CategoryItem.module.css";
 
 const CategoryItem = ({ title, image }) => {
   return (
-    <Link to="/rules" className={styles.category_link}>
+    <Link to={`/rules/${title}`} className={styles.category_link}>
       <div className={styles.category_item}>
         <img src={image} alt={title + "_image"} className="res-img" />
         <p className={styles.category_item_title}>{title}</p>

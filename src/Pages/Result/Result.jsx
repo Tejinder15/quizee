@@ -1,34 +1,32 @@
 import { Link } from "react-router-dom";
 import Header from "../../Components/Header/Header";
+import { useQuiz } from "../../Context/QuizContext/quiz-context";
 import styles from "./Result.module.css";
 const Result = () => {
+  const { quizState } = useQuiz();
   return (
     <div>
       <Header />
-      <h1 className="center-text">Score : 30/50</h1>
+      <h1 className="center-text">Score : {quizState.totalScore}/50</h1>
       <div className={styles.result_container}>
         <div className={styles.result_check}>
           <ol>
-            <li>
-              <p>Your Answer : Answer</p>
-              <p>Correct Answer : Answer</p>
-            </li>
-            <li>
-              <p>Your Answer : Answer</p>
-              <p>Correct Answer : Answer</p>
-            </li>
-            <li>
-              <p>Your Answer : Answer</p>
-              <p>Correct Answer : Answer</p>
-            </li>
-            <li>
-              <p>Your Answer : Answer</p>
-              <p>Correct Answer : Answer</p>
-            </li>
-            <li>
-              <p>Your Answer : Answer</p>
-              <p>Correct Answer : Answer</p>
-            </li>
+            {quizState.result.map((item, index) => (
+              <li key={index}>
+                <p
+                  className={
+                    item.correctAns === item.selectedOption
+                      ? `${styles.crr_ans}`
+                      : `${styles.wrong_ans}`
+                  }
+                >
+                  Your Answer: {item.selectedOption}
+                </p>
+                <p>
+                  <b>Correct Answer:</b> {item.correctAns}
+                </p>
+              </li>
+            ))}
           </ol>
         </div>
         <div className={styles.result_footer}>
