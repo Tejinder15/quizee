@@ -18,9 +18,9 @@ function App() {
         <Route path='/signup' element={<Signup/>}/>
         <Route path='/category' element={<Category/>}/>
         <Route element={<PrivateRoute/>}>
-          <Route path='/rules' element={<Rules/>}/>
-          <Route path='/quiz' element={<Quiz/>}/>
-          <Route path='/result' element={<Result/>}/>
+          <Route path='/rules/:category' element={<Rules/>}/>
+          <Route path='/quiz/:category' element={<Quiz/>}/>
+          <Route path='/result/' element={<Result/>}/>
         </Route>
       </Routes>
     </div>
