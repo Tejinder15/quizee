@@ -8,7 +8,6 @@ Quizee is an app where you can play knowledgeable and fun quiz.
 
 1. Reactjs
 2. [PlumeUi](https://plumeui.netlify.app/)
-3. Backend - Mockbee
 
 ## Features
 
